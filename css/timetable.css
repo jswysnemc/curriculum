@@ -143,3 +143,81 @@ li{
     font-weight: bold;
     padding: 0 10px;
 }
+
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+  /* 表格适配 */
+  table {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+  
+  th, td {
+    padding: 4px;
+  }
+  
+  /* 容器适配 */
+  .container, .timetable-container {
+    width: 100%;
+    padding: 5px;
+    overflow-x: auto;
+  }
+
+  #timetable table {
+    width: 360px;
+    margin: 5px 0 auto;
+}
+  
+  /* 标题适配 */
+  h1, h2, h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  /* 按钮适配 */
+  button {
+    padding: 8px 12px;
+    margin: 5px;
+    font-size: 0.9rem;
+  }
+  
+  /* 输入框适配 */
+  input, select {
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+  }
+  
+  /* 弹性布局适配 */
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+/* 小屏幕手机适配 */
+@media screen and (max-width: 480px) {
+  table {
+    font-size: 0.7rem;
+  }
+  
+  th, td {
+    padding: 2px;
+  }
+  
+  /* 可能需要隐藏或简化某些不重要的列 */
+  .optional-column {
+    display: none;
+  }
+  
+  /* 按钮在小屏幕上垂直排列 */
+  .button-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  button {
+    width: 100%;
+    margin: 3px 0;
+  }
+}
