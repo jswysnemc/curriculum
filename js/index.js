@@ -68,7 +68,6 @@ function getIsYesArray(str) {
  * @param {string} now_weakCount 
  * @returns 
  */
-
 function isThisWeek(weak_str, now_weakCount) {
     // 将字符串中的'周'、'('、')'替换为空字符串
     let str = weak_str.replaceAll('周', '').replaceAll('(', '').replaceAll(')', '');
@@ -83,6 +82,12 @@ function isThisWeek(weak_str, now_weakCount) {
     return arr.includes(now_weakCount);
 }
 
+// 声明一个变量courses_map，并将其初始化为null
+/**
+ * @description 课程表的Map对象, 
+ * @key {string} 课程表的单元格id
+ * @value {Array} 该单元格中的课程数组
+ */
 let courses_map = null;
 
 // 更新课程表
@@ -250,7 +255,7 @@ function createWeekSwitcher() {
 
     // 下一周按钮点击事件
     nextWeekBtn.addEventListener('click', () => {
-        if (now_display_week_count < 20) { // 假设最多20周
+        if (now_display_week_count <= TAOTAL_WEEKS) { // 假设最多20周
             updateTimetableDisplay(now_display_week_count + 1);
         }
     });
