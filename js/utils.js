@@ -142,14 +142,14 @@ function createTable() {
                 if (i == 0)
                     th_str += `<td class="swbj" id="${i}_${j}" rowspan=4>上午</td>\n`;
                 if (i == 4)
-                    th_str += `<td class="xwbj" id="${i}_${j}" rowspan=4>下午</td>\n`;
+                    th_str += `<td class="xwbj"  id="${i}_${j}" rowspan=4>下午</td>\n`;
                 if (i == 8)
-                    th_str += `<td class="wsbj" id="${i}_${j}" rowspan=3>晚上</td>\n`;
+                    th_str += `<td class="wsbj"  id="${i}_${j}" rowspan=3>晚上</td>\n`;
             }
             else if (true) {
                 if (i == 0) {
                     if (j == 1) {
-                        th_str += `<td  class="swbj" id="jc${i + 1}_${i + 2}_${j - 2}" rowspan=2>第${i + 1}~${i + 2}节 ${TIMES[i]} <br>${TIMES[i + 1]}</td>\n`;
+                        th_str += `<td  class="swbj" id="jc${i + 1}_${i + 2}_${j - 2}" rowspan=2>  <span class="vis">第${i + 1}~${i + 2}节 ${TIMES[i]} ${TIMES[i + 1]} </span> </td>\n`;
                     }
                     else {
                         th_str += `<td  class="swbj closeBtn" id="id_${i + 1}_${i + 2}_${j - 2}" rowspan=2></td>\n`;
@@ -157,7 +157,7 @@ function createTable() {
                 }
                 if (i == 2) {
                     if (j == 1) {
-                        th_str += `<td  class="swbj" id="jc${i + 1}_${i + 2}_${j - 2}" rowspan=2>第${i + 1}~${i + 2}节 ${TIMES[i]} <br>${TIMES[i + 1]}</td>\n`;
+                        th_str += `<td  class="swbj" id="jc${i + 1}_${i + 2}_${j - 2}" rowspan=2>  <span class="vis"> 第${i + 1}~${i + 2}节  ${TIMES[i]} ${TIMES[i + 1]}  </span></td>\n`;
                     }
                     else {
                         th_str += `<td  class="swbj closeBtn" id="id_${i + 1}_${i + 2}_${j - 2}" rowspan=2></td>\n`;
@@ -165,7 +165,7 @@ function createTable() {
                 }
                 if (i == 4) {
                     if (j == 1) {
-                        th_str += `<td  class="xwbj" id="jc${i + 1}_${i + 2}_${j - 2}" rowspan=2>第${i + 1}~${i + 2}节 ${TIMES[i]} <br>${TIMES[i + 1]}</td>\n`;
+                        th_str += `<td  class="xwbj" id="jc${i + 1}_${i + 2}_${j - 2}" rowspan=2>  <span class="vis"> 第${i + 1}~${i + 2}节 ${TIMES[i]} ${TIMES[i + 1]}  </span></td>\n`;
                     }
                     else {
                         th_str += `<td  class="xwbj closeBtn" id="id_${i + 1}_${i + 2}_${j - 2}" rowspan=2></td>\n`;
@@ -173,7 +173,7 @@ function createTable() {
                 }
                 if (i == 6) {
                     if (j == 1) {
-                        th_str += `<td  class="xwbj" id="jc${i + 1}_${i + 2}_${j - 2}" rowspan=2>第${i + 1}~${i + 2}节 ${TIMES[i]} <br>${TIMES[i + 1]}</td>\n`;
+                        th_str += `<td  class="xwbj" id="jc${i + 1}_${i + 2}_${j - 2}" rowspan=2>  <span class="vis"> 第${i + 1}~${i + 2}节 ${TIMES[i]} ${TIMES[i + 1]}  </span> </td>\n`;
                     }
                     else {
                         th_str += `<td  class="xwbj closeBtn" id="id_${i + 1}_${i + 2}_${j - 2}" rowspan=2></td>\n`;
@@ -181,7 +181,7 @@ function createTable() {
                 }
                 if (i == 8) {
                     if (j == 1) {
-                        th_str += `<td  class="wsbj" id="jc${i + 1}_${i + 2}_${j - 2}" rowspan=2>第${i + 1}~${i + 2}节 ${TIMES[i]} <br>${TIMES[i + 1]}</td>\n`;
+                        th_str += `<td  class="wsbj" id="jc${i + 1}_${i + 2}_${j - 2}" rowspan=2><span class="vis"> 第${i + 1}~${i + 2}节 ${TIMES[i]} ${TIMES[i + 1]}  </span> </td>\n`;
                     }
                     else {
                         th_str += `<td  class="wsbj closeBtn" id="id_${i + 1}_${i + 2}_${j - 2}" rowspan=2></td>\n`;
@@ -189,7 +189,7 @@ function createTable() {
                 }
                 if (i == 10) {
                     if (j == 1) {
-                        th_str += `<td  class="wsbj" id="jc${i + 1}_${i + 2}_${j - 2}" rowspan=1>第${i + 1}节 ${TIMES[i]}</td>\n`;
+                        th_str += `<td  class="wsbj" id="jc${i + 1}_${i + 2}_${j - 2}" rowspan=1> <span class="vis"> 第${i + 1}节 ${TIMES[i]}  </span> </td>\n`;
                     }
                     else {
                         th_str += `<td class="wsbj closeBtn" id="id_${i + 1}_${j - 2}" ></td>\n`;

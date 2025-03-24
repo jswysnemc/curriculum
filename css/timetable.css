@@ -34,6 +34,7 @@ html, body {
     padding: 10px;
 }
 
+
 .rt {
     color:red;
 }
@@ -156,6 +157,17 @@ li{
   th, td {
     padding: 4px;
   }
+
+  .vertical-text {
+    writing-mode: vertical-rl; /* 从右向左竖排 */
+    text-orientation: upright; /* 保持文字直立 */
+  }
+
+  .vis{
+    display: inline-block; /* 确保旋转生效 */
+    transform: rotate(90deg); /* 旋转180度 */
+  }
+
   
   /* 容器适配 */
   .container, .timetable-container {
@@ -165,7 +177,7 @@ li{
   }
 
   #timetable table {
-    width: 360px;
+    width: 420px;
     margin: 5px 0 auto;
 }
   

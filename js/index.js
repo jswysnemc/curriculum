@@ -164,7 +164,6 @@ function updateTable() {
 
     // 对表格添加监听事件, 事件委托, 将子元素事件委托给父元素
     table?.addEventListener("click", function (e) {
-        console.log('click');
         
         // 获取鼠标位置信息
         let [x, y] = [e.clientX, e.clientY];
@@ -328,15 +327,30 @@ function getPopUpWindowInnerStr(text_id) {
 }
 
 
-// 周日不显示课程,将其隐藏
+// 周末以及第11节, 不显示课程,将其隐藏 如有课程可以在此处修改
 function clear_sunday() {
     let sunDayColumn_dmom = $('#timetable > table > tr:nth-child(1) > th:nth-child(3)');
-    let delete_ids = '1_2,3_4,5_6,7_8,9_10,11'.split(',').map(e => 'id_' + e + '_0');
+    let sartardayColum_dmom = $('#timetable > table > tr:nth-child(1) > th:nth-child(9)');
+    let _11_jie_line = $('#timetable > table > tr:nth-child(12)');
+
+
+    
+    let delete_ids = '1_2,3_4,5_6,7_8,9_10,11'.split(',')
     delete_ids.forEach(e => {
-        let dom_delete_td_dom = $('#' + e);
+        let str1 = 'id_' + e + '_0';
+        let str2 = 'id_' + e + '_6';
+        let dom_delete_td_dom = $('#' + str1);
+        let dom_delete_td_dom2 = $('#' + str2)
+        
         dom_delete_td_dom.style.display = 'none';
+        dom_delete_td_dom2.style.display = 'none';
     });
     sunDayColumn_dmom.style.display = "none";
+    sartardayColum_dmom.style.display = "none";
+    _11_jie_line.style.display = "none";
+
+    // 修复删除一行的异常
+    document.getElementById("8_0").setAttribute("rowspan","2")    
 }
 
 // 以下代码用于 将即将上课的课程或者正在上课的课程 边框变色,
