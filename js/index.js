@@ -31,8 +31,8 @@ let now_display_week_count = getWeekCount(new Date());
 
 /**
  * @description  根据显示上课周 的字符串 获取上课周的数组  例如 '1-3周,5-7周' => [1,2,3,5,6,7]
- * @param {string} str  课程周次字符串
- * @returns 上课周的数组
+ * @param {string} str 
+ * @returns 
  */
 function getIsYesArray(str) {
     let arr = new Array();
@@ -63,26 +63,35 @@ function getIsYesArray(str) {
 
 
 /**
- * 
- * @param {Date} week_str  课程周次字符串
- * @param {*} weak  第几周
- * @returns {bool} 是否是本周
+ * @description 给定一个字符串和当前周次, 判断该字符串是否包含当前周次
+ * @param {Date} weak_str 
+ * @param {string} now_weakCount 
+ * @returns 
  */
-function isThisWeek(week_str, weak) {
-    let str = week_str.replaceAll('周', '').replaceAll('(', '').replaceAll(')', '');
+
+function isThisWeek(weak_str, now_weakCount) {
+    // 将字符串中的'周'、'('、')'替换为空字符串
+    let str = weak_str.replaceAll('周', '').replaceAll('(', '').replaceAll(')', '');
+    // 定义一个空数组
     let arr = [];
-    week_str.split(',').forEach(e => {
+    // 将字符串按逗号分割，并遍历每个元素
+    str.split(',').forEach(e => {
+        // 将每个元素转换为布尔数组，并合并到arr数组中
         arr = arr.concat(getIsYesArray(e));
     });
-    return arr.includes(weak);
+    // 判断arr数组中是否包含now_weakCount
+    return arr.includes(now_weakCount);
 }
 
 let courses_map = null;
 
 // 更新课程表
 function updateTable() {
+    // 清空课程表
     courses_map = null;
+    // 创建课程表
     createTable();
+    // 清空周日课程
     clear_sunday();
     // 添加课程到课程表中
     data.forEach(e => {
@@ -150,7 +159,7 @@ function updateTable() {
 
     // 对表格添加监听事件, 事件委托, 将子元素事件委托给父元素
     table?.addEventListener("click", function (e) {
-        
+        console.log('click');
         
         // 获取鼠标位置信息
         let [x, y] = [e.clientX, e.clientY];
@@ -268,11 +277,6 @@ function popUpWindowClose() {
     moddle_dom.style.display = "none";
 }
 // 处理弹窗
-/**
- * 
- * @param {string} text_id 表格单元id
- * @returns 一个html字符串, 用于弹窗显示
- */
 function getPopUpWindowInnerStr(text_id) {
     let str = '';
     let old_text_id = text_id;
