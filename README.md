@@ -12,3 +12,5 @@
     // 输入开学日期
     const START_DATE = new Date('2025-2-17');
     ```
+
+![alt text](https://s1.vika.cn/space/2025/03/27/53cc6908bf4e449faf9b86a79d5aadda)
